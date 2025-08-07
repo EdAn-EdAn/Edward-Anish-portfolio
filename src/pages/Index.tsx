@@ -1,12 +1,48 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import Navigation from "@/components/portfolio/Navigation";
+import Hero from "@/components/portfolio/Hero";
+import About from "@/components/portfolio/About";
+import Experience from "@/components/portfolio/Experience";
+import Projects from "@/components/portfolio/Projects";
+import Contact from "@/components/portfolio/Contact";
 
 const Index = () => {
+  useScrollAnimation();
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      
+      <main>
+        <section id="home">
+          <Hero />
+        </section>
+        
+        <section id="about">
+          <About />
+        </section>
+        
+        <section id="experience">
+          <Experience />
+        </section>
+        
+        <section id="projects">
+          <Projects />
+        </section>
+        
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+      
+      {/* Footer */}
+      <footer className="py-8 border-t border-border bg-surface/30">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-muted-foreground">
+            © 2025 Edward Anish. Built with passion for innovation and creativity.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
