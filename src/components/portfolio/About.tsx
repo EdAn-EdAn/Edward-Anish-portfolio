@@ -70,7 +70,7 @@ const About = () => {
             <div className="fade-in-up stagger-2">
               <h4 className="text-lg font-medium mb-3">Core Technologies</h4>
               <div className="flex flex-wrap gap-2">
-                {["Python", "HTML/CSS", "JavaScript", "C/C++", "MATLAB", "Blender", "FL Studio", "Git", "Data Analysis"].map((skill, index) => (
+                {["Python", "HTML/CSS", "JavaScript", "MATLAB", "Blender", "FL Studio", "Fusion 360", "Microsoft Suite", "Data Analysis"].map((skill, index) => (
                   <Badge key={index} variant="secondary" className="tech-glow">
                     {skill}
                   </Badge>
