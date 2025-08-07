@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, Play, Settings, Music } from "lucide-react";
+import { Play, Settings, Music } from "lucide-react";
 
 const Projects = () => {
   const projects = [
