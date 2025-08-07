@@ -62,7 +62,7 @@ const Hero = () => {
                 <Linkedin className="w-6 h-6 text-primary group-hover:text-primary-glow transition-colors" />
               </a>
               <a 
-                href="https://github.com/edward-anish" 
+                href="https://github.com/EdAn-EdAn" 
                 className="p-3 bg-card border border-card-border rounded-xl hover:bg-surface-variant transition-all duration-300 tech-glow group"
               >
                 <Github className="w-6 h-6 text-primary group-hover:text-primary-glow transition-colors" />
