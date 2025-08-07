@@ -56,7 +56,7 @@ const Hero = () => {
 
             <div className="fade-in-up stagger-4 flex gap-6 justify-center lg:justify-start">
               <a 
-                href="https://linkedin.com/in/edward-anish" 
+                href="https://www.linkedin.com/in/edward-anish-a51b12250/" 
                 className="p-3 bg-card border border-card-border rounded-xl hover:bg-surface-variant transition-all duration-300 tech-glow group"
               >
                 <Linkedin className="w-6 h-6 text-primary group-hover:text-primary-glow transition-colors" />
