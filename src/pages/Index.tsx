@@ -14,23 +14,23 @@ const Index = () => {
       <Navigation />
       
       <main>
-        <section id="home">
+        <section id="home" className="section-reveal">
           <Hero />
         </section>
         
-        <section id="about">
+        <section id="about" className="section-reveal">
           <About />
         </section>
         
-        <section id="experience">
+        <section id="experience" className="section-reveal">
           <Experience />
         </section>
         
-        <section id="projects">
+        <section id="projects" className="section-reveal">
           <Projects />
         </section>
         
-        <section id="contact">
+        <section id="contact" className="section-reveal">
           <Contact />
         </section>
       </main>

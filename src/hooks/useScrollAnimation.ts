@@ -2,14 +2,14 @@ import { useEffect, useCallback } from 'react';
 
 export const useScrollAnimation = () => {
   const handleScroll = useCallback(() => {
-    const elements = document.querySelectorAll('.fade-in-up');
+    const fadeElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .section-reveal');
     const parallaxElements = document.querySelectorAll('.parallax-element');
     
-    elements.forEach((element) => {
+    fadeElements.forEach((element) => {
       const rect = element.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      if (rect.top <= windowHeight * 0.8) {
+      if (rect.top <= windowHeight * 0.85) {
         element.classList.add('visible');
       }
     });

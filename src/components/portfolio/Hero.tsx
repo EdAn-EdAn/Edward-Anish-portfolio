@@ -44,12 +44,12 @@ const Hero = () => {
 
             <div className="fade-in-up stagger-3 flex flex-wrap gap-4 justify-center lg:justify-start">
               <a href="mailto:edward.0.anish@gmail.com">
-                <Button variant="default" size="lg" className="hero-glow glow-pulse">
+                <Button variant="magic" size="lg" className="hover-glow">
                   <Mail className="w-5 h-5 mr-2" />
                   Get In Touch
                 </Button>
               </a>
-              <Button variant="outline" size="lg" className="tech-glow">
+              <Button variant="outline" size="lg" className="hover-glow">
                 View Projects
               </Button>
             </div>
@@ -57,19 +57,40 @@ const Hero = () => {
             <div className="fade-in-up stagger-4 flex gap-6 justify-center lg:justify-start">
               <a 
                 href="https://www.linkedin.com/in/edward-anish-a51b12250/" 
-                className="p-3 bg-card border border-card-border rounded-xl hover:bg-surface-variant transition-all duration-300 tech-glow group"
+                className="p-3 bg-card border border-card-border rounded-xl hover:bg-surface-variant hover-lift card-magnetic group"
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+                  e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+                }}
               >
                 <Linkedin className="w-6 h-6 text-primary group-hover:text-primary-glow transition-colors" />
               </a>
               <a 
                 href="https://github.com/EdAn-EdAn" 
-                className="p-3 bg-card border border-card-border rounded-xl hover:bg-surface-variant transition-all duration-300 tech-glow group"
+                className="p-3 bg-card border border-card-border rounded-xl hover:bg-surface-variant hover-lift card-magnetic group"
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+                  e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+                }}
               >
                 <Github className="w-6 h-6 text-primary group-hover:text-primary-glow transition-colors" />
               </a>
               <a 
                 href="tel:+917012424507" 
-                className="p-3 bg-card border border-card-border rounded-xl hover:bg-surface-variant transition-all duration-300 tech-glow group"
+                className="p-3 bg-card border border-card-border rounded-xl hover:bg-surface-variant hover-lift card-magnetic group"
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+                  e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+                }}
               >
                 <Phone className="w-6 h-6 text-primary group-hover:text-primary-glow transition-colors" />
               </a>

@@ -44,8 +44,15 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left: Story */}
-          <div className="space-y-6 fade-in-up stagger-1">
-            <Card className="p-8 bg-gradient-to-br from-card to-surface border-card-border">
+          <div className="space-y-6 fade-in-left stagger-1">
+            <Card className="p-8 bg-gradient-to-br from-card to-surface border-card-border hover-lift card-magnetic"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+                e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+              }}>
               <h3 className="text-2xl font-semibold mb-4 text-primary">My Journey</h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -84,7 +91,14 @@ const About = () => {
             {highlights.map((item, index) => (
               <Card 
                 key={index} 
-                className={`p-6 bg-gradient-to-br from-card to-surface border-card-border hover:border-primary/50 transition-all duration-300 group fade-in-up stagger-${index + 1}`}
+                className={`p-6 bg-gradient-to-br from-card to-surface border-card-border hover:border-primary/50 hover-lift card-magnetic group fade-in-right stagger-${index + 1}`}
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+                  e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+                }}
               >
                 <div className="flex flex-col items-center text-center space-y-3">
                   <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
