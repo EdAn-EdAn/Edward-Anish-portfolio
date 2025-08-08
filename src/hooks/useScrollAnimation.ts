@@ -9,8 +9,13 @@ export const useScrollAnimation = () => {
       const rect = element.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      if (rect.top <= windowHeight * 0.85) {
+      // Show element when scrolling down
+      if (rect.top <= windowHeight * 0.85 && rect.bottom >= 0) {
         element.classList.add('visible');
+      }
+      // Hide element when scrolling up (reverse transition)
+      else if (rect.top > windowHeight * 0.9 || rect.bottom < -100) {
+        element.classList.remove('visible');
       }
     });
 
