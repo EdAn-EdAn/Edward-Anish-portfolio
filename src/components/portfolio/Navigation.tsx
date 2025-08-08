@@ -72,13 +72,13 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 transition-transform duration-200 active:scale-95 hover:bg-surface/50 rounded-lg"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 transform transition-transform duration-300" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6 transform transition-transform duration-300" />
             )}
           </button>
         </div>

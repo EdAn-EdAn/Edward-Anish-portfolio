@@ -93,10 +93,38 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index}
-              className={`group relative overflow-hidden bg-gradient-to-br from-card to-surface border-card-border hover:border-primary/50 transition-all duration-500 fade-in-up stagger-${index + 1}`}
+              className={`project-card group relative overflow-hidden bg-gradient-to-br from-card to-surface border-card-border hover:border-primary/50 transition-all duration-500 fade-in-up stagger-${index + 1}`}
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+                e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+              }}
             >
               {/* Gradient overlay */}
               <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
+              
+              {/* Cursor light effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div 
+                  className="absolute w-32 h-32 bg-gradient-radial from-primary/20 via-primary/5 to-transparent rounded-full -translate-x-1/2 -translate-y-1/2 blur-xl"
+                  style={{
+                    left: 'var(--mouse-x, 50%)',
+                    top: 'var(--mouse-y, 50%)',
+                  }}
+                ></div>
+              </div>
+              
+              {/* Diagonal edge highlight */}
+              <div className="absolute top-0 right-0 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div 
+                  className="absolute inset-0 bg-gradient-to-bl from-primary/30 via-primary/10 to-transparent"
+                  style={{
+                    clipPath: 'polygon(100% 0%, 0% 100%, 100% 100%)'
+                  }}
+                ></div>
+              </div>
               
               <div className="relative p-6 h-full flex flex-col">
                 
@@ -153,20 +181,49 @@ const Projects = () => {
             {personalProjects.map((project, index) => (
               <Card 
                 key={index}
-                className="p-4 bg-gradient-to-br from-surface to-surface-variant border-card-border hover:border-secondary/50 transition-all duration-300 group"
+                className="project-card p-4 bg-gradient-to-br from-surface to-surface-variant border-card-border hover:border-secondary/50 transition-all duration-300 group relative overflow-hidden"
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+                  e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+                }}
               >
-                <h4 className="font-medium text-foreground mb-2 group-hover:text-secondary transition-colors">
-                  {project.title}
-                </h4>
-                <p className="text-sm text-muted-foreground mb-3">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1">
-                  {project.tech.map((tech, i) => (
-                    <Badge key={i} variant="outline" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
+                {/* Cursor light effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  <div 
+                    className="absolute w-24 h-24 bg-gradient-radial from-secondary/20 via-secondary/5 to-transparent rounded-full -translate-x-1/2 -translate-y-1/2 blur-lg"
+                    style={{
+                      left: 'var(--mouse-x, 50%)',
+                      top: 'var(--mouse-y, 50%)',
+                    }}
+                  ></div>
+                </div>
+                
+                {/* Diagonal edge highlight */}
+                <div className="absolute top-0 right-0 w-12 h-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-bl from-secondary/30 via-secondary/10 to-transparent"
+                    style={{
+                      clipPath: 'polygon(100% 0%, 0% 100%, 100% 100%)'
+                    }}
+                  ></div>
+                </div>
+                <div className="relative z-10">
+                  <h4 className="font-medium text-foreground mb-2 group-hover:text-secondary transition-colors">
+                    {project.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1">
+                    {project.tech.map((tech, i) => (
+                      <Badge key={i} variant="outline" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </Card>
             ))}

@@ -158,14 +158,14 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="hero-glow glow-pulse group">
+                <div className="flex justify-center">
+                  <Button 
+                    size="lg" 
+                    className="hero-glow glow-pulse group"
+                    onClick={() => window.open('https://wa.me/917012424507', '_blank')}
+                  >
                     <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
                     Send Message
-                  </Button>
-                  <Button size="lg" variant="outline" className="tech-glow">
-                    <Download className="w-5 h-5 mr-2" />
-                    Download Resume
                   </Button>
                 </div>
 
